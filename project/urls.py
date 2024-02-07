@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+
+#Padrão MVP o django usa
+#Parecido com o MVC
+def home(request):
+    return HttpResponse("Home1")
+
+def blog(request):
+    return HttpResponse("Error, blog em desenvolvimento")
+    
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blog/', blog),
+    path('', home)
 ]
